@@ -1,0 +1,337 @@
+
+/* =========================================
+   HOME HERO
+========================================= */
+
+.home-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    isolation: isolate;
+
+    min-height: 100svh;
+    overflow: hidden;
+
+    background-color: #21132f;
+    color: #f7ebdd;
+}
+
+/* =========================================
+   CINEMATIC BACKGROUND
+========================================= */
+
+.home-hero__background {
+    position: absolute;
+    inset: -12% 0;
+    z-index: -2;
+
+    background-image:
+        url("../../public/images/Home/sunset-city.png");
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    will-change: transform;
+}
+
+.home-hero__shade {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(17, 8, 30, 0.84) 0%,
+            rgba(25, 12, 41, 0.58) 38%,
+            rgba(30, 15, 45, 0.12) 75%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(15, 8, 27, 0.72),
+            transparent 38%
+        );
+
+    pointer-events: none;
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.home-hero__container {
+    width: min(100% - 80px, 1380px);
+    margin: 0 auto;
+    padding: 160px 0 130px;
+}
+
+.home-hero__content {
+    max-width: 960px;
+    animation: home-hero-reveal 1.1s ease both;
+}
+
+.home-hero__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 24px;
+
+    color: #e7c78b;
+
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+.home-hero__title {
+    margin: 0 0 18px;
+
+    color: #f9f0e5;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: clamp(76px, 9.4vw, 150px);
+    font-weight: 400;
+    letter-spacing: -4px;
+    line-height: 0.95;
+}
+
+.home-hero__subtitle {
+    margin-bottom: 22px;
+
+    color: #e6c68c;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: clamp(26px, 3.2vw, 44px);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.home-hero__description {
+    max-width: 570px;
+    margin-bottom: 0;
+
+    color: #e9dfeb;
+
+    font-size: clamp(15px, 1.25vw, 17px);
+    font-weight: 400;
+    line-height: 1.85;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.home-hero__actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+
+    margin-top: 38px;
+}
+
+.home-hero__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+
+    min-height: 52px;
+    padding: 13px 28px;
+
+    border: 1px solid #e0bb79;
+    border-radius: 100px;
+
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+
+    transition:
+        background-color 300ms ease,
+        border-color 300ms ease,
+        color 300ms ease,
+        transform 300ms ease,
+        box-shadow 300ms ease;
+}
+
+.home-hero__button--primary {
+    background-color: #e0bb79;
+    color: #21132f;
+}
+
+.home-hero__button--primary:hover {
+    background-color: #f2d59c;
+    border-color: #f2d59c;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.home-hero__button--outline {
+    background-color: rgba(25, 12, 40, 0.2);
+    color: #f7ebdd;
+}
+
+.home-hero__button--outline:hover {
+    background-color: rgba(224, 187, 121, 0.16);
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   SCROLL INDICATOR
+========================================= */
+
+.home-hero__scroll-indicator {
+    position: absolute;
+    right: 5%;
+    bottom: 35px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+
+    color: #e7c78b;
+
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.home-hero__scroll-line {
+    width: 1px;
+    height: 48px;
+
+    background: linear-gradient(
+        #e7c78b,
+        transparent
+    );
+
+    animation: home-scroll-pulse 2s ease-in-out infinite;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes home-hero-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(32px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes home-scroll-pulse {
+    0%,
+    100% {
+        opacity: 0.35;
+        transform: scaleY(0.75);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+    .home-hero__container {
+        width: calc(100% - 48px);
+        padding: 150px 0 110px;
+    }
+
+    .home-hero__title {
+        font-size: clamp(70px, 11vw, 110px);
+    }
+
+    .home-hero__background {
+        background-position: 60% center;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+    .home-hero__container {
+        width: calc(100% - 36px);
+        padding: 140px 0 100px;
+    }
+
+    .home-hero__eyebrow {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .home-hero__title {
+        font-size: clamp(62px, 14vw, 86px);
+        letter-spacing: -2px;
+    }
+
+    .home-hero__subtitle {
+        font-size: 27px;
+    }
+
+    .home-hero__description {
+        font-size: 15px;
+        line-height: 1.75;
+    }
+
+    .home-hero__actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .home-hero__button {
+        width: 100%;
+    }
+
+    .home-hero__scroll-indicator {
+        display: none;
+    }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .home-hero__content,
+    .home-hero__scroll-line {
+        animation: none;
+    }
+
+    .home-hero__background {
+        transform: none !important;
+        will-change: auto;
+    }
+
+    .home-hero__button {
+        transition: none;
+    }
+}

@@ -1,0 +1,343 @@
+
+/* =========================================
+   PROJECTS PAGE
+========================================= */
+
+.projects {
+    min-height: 100vh;
+    background: #160e23;
+    color: #f7ebdd;
+}
+
+/* =========================================
+   CINEMATIC HERO
+========================================= */
+.projects__hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 470px;
+    padding: 140px 0 90px;
+    overflow: hidden;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(17, 9, 29, 0.96) 0%,
+            rgba(28, 15, 43, 0.72) 55%,
+            rgba(28, 15, 43, 0.25) 100%
+        ),
+        url("../../public/images/Home/sunset-coding.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-color: #21132f;
+}
+
+.projects__hero-content {
+    position: relative;
+    width: min(100% - 64px, 1380px);
+    margin: 0 auto;
+    animation: projects-reveal 850ms ease both;
+}
+
+.projects__eyebrow {
+    margin-bottom: 18px;
+    color: #e4bd76;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.projects__hero h1 {
+    margin: 0 0 20px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(64px, 8vw, 120px);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -2px;
+}
+
+.projects__hero h1 em {
+    color: #e4bd76;
+    font-weight: 400;
+}
+
+.projects__intro {
+    max-width: 600px;
+    margin: 0;
+    color: #e1d5e6;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* =========================================
+   PORTFOLIO
+========================================= */
+
+.projects__portfolio {
+    padding: 75px 0 120px;
+}
+
+.projects__container {
+    width: min(100% - 64px, 1380px);
+    margin: 0 auto;
+}
+
+.projects__filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.projects__filter {
+    min-height: 42px;
+    padding: 10px 22px;
+    border: 1px solid rgba(228, 189, 118, 0.3);
+    border-radius: 100px;
+
+    background: transparent;
+    color: #e4d9e9;
+
+    font-size: 12px;
+    cursor: pointer;
+
+    transition:
+        background-color 250ms ease,
+        border-color 250ms ease,
+        color 250ms ease;
+}
+
+.projects__filter:hover {
+    border-color: #e4bd76;
+    color: #e4bd76;
+}
+
+.projects__filter--active {
+    background: #e4bd76;
+    border-color: #e4bd76;
+    color: #21132f;
+}
+
+.projects__count {
+    margin: 0 0 26px;
+    color: #b9a8c6;
+    font-size: 12px;
+}
+
+.projects__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+}
+
+/* =========================================
+   PROJECT CARDS
+========================================= */
+
+.projects__card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    border: 1px solid rgba(228, 189, 118, 0.15);
+    border-radius: 12px;
+
+    background: #241630;
+
+    transition:
+        transform 300ms ease,
+        border-color 300ms ease,
+        box-shadow 300ms ease;
+}
+
+.projects__card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(228, 189, 118, 0.45);
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.22);
+}
+
+.projects__image {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 70% 35%,
+            rgba(228, 189, 118, 0.25),
+            transparent 45%
+        ),
+        linear-gradient(135deg, #342047, #171020);
+}
+
+.projects__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 500ms ease;
+}
+
+.projects__card:hover .projects__image img {
+    transform: scale(1.04);
+}
+
+.projects__image-label {
+    position: absolute;
+    left: 18px;
+    bottom: 18px;
+
+    padding: 7px 13px;
+    border: 1px solid rgba(228, 189, 118, 0.4);
+    border-radius: 100px;
+
+    background: rgba(22, 14, 35, 0.88);
+    color: #e4bd76;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.projects__card-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 28px;
+}
+
+.projects__card-title {
+    margin: 0 0 14px;
+    color: #f7ebdd;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.projects__description {
+    margin: 0 0 22px;
+    color: #cbbdd5;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.projects__technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin: auto 0 25px;
+    padding: 0;
+    list-style: none;
+}
+
+.projects__technologies li {
+    padding: 5px 10px;
+    border: 1px solid rgba(228, 189, 118, 0.18);
+    border-radius: 4px;
+
+    color: #d9c4a1;
+    font-size: 10px;
+}
+
+.projects__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(228, 189, 118, 0.14);
+}
+
+.projects__links a {
+    color: #e4bd76;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.projects__links a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes projects-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1050px) {
+    .projects__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .projects__hero {
+        min-height: 400px;
+        padding: 125px 0 65px;
+    }
+
+    .projects__hero-content,
+    .projects__container {
+        width: calc(100% - 36px);
+    }
+
+    .projects__hero h1 {
+        font-size: clamp(56px, 13vw, 78px);
+    }
+
+    .projects__intro {
+        font-size: 14px;
+    }
+
+    .projects__portfolio {
+        padding: 45px 0 80px;
+    }
+
+    .projects__grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .projects__card-content {
+        padding: 24px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .projects__hero-content {
+        animation: none;
+    }
+
+    .projects__card,
+    .projects__image img,
+    .projects__filter {
+        transition: none;
+    }
+
+    .projects__card:hover,
+    .projects__card:hover .projects__image img {
+        transform: none;
+    }
+}

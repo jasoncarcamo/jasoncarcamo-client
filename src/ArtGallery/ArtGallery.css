@@ -1,0 +1,571 @@
+
+/* =========================================
+   ART GALLERY
+========================================= */
+
+.art-gallery {
+    min-height: 100vh;
+    background: #f5efe5;
+    color: #2a1a32;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.art-gallery__hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 510px;
+    padding: 145px 0 95px;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(19, 10, 31, 0.96),
+            rgba(37, 20, 53, 0.75) 65%,
+            rgba(71, 43, 60, 0.4)
+        ),
+        radial-gradient(
+            ellipse at 85% 65%,
+            rgba(205, 151, 96, 0.48),
+            transparent 50%
+        ),
+        #21132f;
+
+    color: #f7ebdd;
+}
+
+.art-gallery__hero-content {
+    position: relative;
+    width: min(100% - 64px, 1380px);
+    margin: 0 auto;
+
+    animation: art-gallery-reveal 900ms ease both;
+}
+
+.art-gallery__eyebrow {
+    margin: 0 0 18px;
+    color: #c89e5b;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+}
+
+.art-gallery__hero .art-gallery__eyebrow {
+    color: #e4bd76;
+}
+
+.art-gallery__hero h1 {
+    margin: 0 0 25px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(75px, 9vw, 130px);
+    font-weight: 400;
+    letter-spacing: -2px;
+    line-height: 0.95;
+}
+
+.art-gallery__hero h1 em {
+    color: #e4bd76;
+    font-weight: 400;
+}
+
+.art-gallery__intro {
+    max-width: 600px;
+    margin: 0;
+    color: #e3d7e8;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.art-gallery__hero-line {
+    display: block;
+    width: 85px;
+    height: 1px;
+    margin-top: 35px;
+    background: #e4bd76;
+}
+
+/* =========================================
+   COLLECTION
+========================================= */
+
+.art-gallery__collection {
+    padding: 95px 0 120px;
+}
+
+.art-gallery__container {
+    width: min(100% - 64px, 1380px);
+    margin: 0 auto;
+}
+
+.art-gallery__section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 45px;
+}
+
+.art-gallery__section-heading h2 {
+    margin: 0;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(48px, 6vw, 80px);
+    font-weight: 400;
+    line-height: 1;
+}
+
+.art-gallery__section-heading h2 em {
+    color: #a57a42;
+    font-weight: 400;
+}
+
+.art-gallery__section-heading > p {
+    max-width: 330px;
+    margin: 0;
+    color: #746878;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* =========================================
+   FILTERS
+========================================= */
+
+.art-gallery__filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.art-gallery__filter {
+    min-height: 43px;
+    padding: 10px 22px;
+
+    border: 1px solid #d8c8b6;
+    border-radius: 100px;
+
+    background: transparent;
+    color: #514157;
+
+    font-size: 12px;
+    cursor: pointer;
+
+    transition:
+        background-color 250ms ease,
+        border-color 250ms ease,
+        color 250ms ease;
+}
+
+.art-gallery__filter:hover {
+    border-color: #a57a42;
+    color: #815b2e;
+}
+
+.art-gallery__filter--active {
+    border-color: #342044;
+    background: #342044;
+    color: #fff7ed;
+}
+
+.art-gallery__count {
+    margin: 0 0 28px;
+    color: #827585;
+    font-size: 12px;
+}
+
+/* =========================================
+   ARTWORK GRID
+========================================= */
+
+
+/* =========================================
+   ARTWORK COMING SOON
+========================================= */
+
+.art-gallery__coming-soon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 420px;
+    padding: 90px 30px;
+    text-align: center;
+
+    border: 1px solid rgba(228, 189, 118, 0.2);
+    background: rgba(33, 19, 47);
+}
+
+.art-gallery__coming-soon-eyebrow {
+    margin-bottom: 22px;
+    color: #e4bd76;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+
+.art-gallery__coming-soon h2 {
+    margin: 0 0 25px;
+    color: #f7ebdd;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(48px, 6vw, 82px);
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.art-gallery__coming-soon h2 em {
+    color: #e4bd76;
+    font-weight: 400;
+}
+
+.art-gallery__coming-soon p {
+    max-width: 550px;
+    margin: 0;
+    color: #cbbdd5;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.art-gallery__coming-soon-decoration {
+    margin-top: 35px;
+    color: #e4bd76;
+    font-size: 25px;
+}
+
+@media (max-width: 650px) {
+    .art-gallery__coming-soon {
+        min-height: 350px;
+        padding: 65px 20px;
+    }
+}
+
+
+.art-gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 55px 30px;
+}
+
+.art-gallery__card {
+    min-width: 0;
+}
+
+.art-gallery__image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+
+    background: #e6dbcb;
+    box-shadow: 0 16px 35px rgba(39, 23, 36, 0.1);
+}
+
+.art-gallery__image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 500ms ease;
+}
+
+.art-gallery__card:hover .art-gallery__image img {
+    transform: scale(1.035);
+}
+
+/* =========================================
+   ARTWORK PLACEHOLDERS
+========================================= */
+
+.art-gallery__placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        radial-gradient(
+            circle at 65% 30%,
+            rgba(229, 191, 137, 0.3),
+            transparent 45%
+        ),
+        linear-gradient(
+            145deg,
+            #e6d6c2,
+            #d1b9aa 55%,
+            #b69d9b
+        );
+}
+
+.art-gallery__card:nth-child(2n)
+.art-gallery__placeholder {
+    background:
+        linear-gradient(
+            145deg,
+            #d4c7c4,
+            #a99aa8 55%,
+            #6d5879
+        );
+}
+
+.art-gallery__card:nth-child(3n)
+.art-gallery__placeholder {
+    background:
+        linear-gradient(
+            145deg,
+            #d6c1a5,
+            #b79c7c 55%,
+            #816b60
+        );
+}
+
+.art-gallery__placeholder-symbol {
+    color: rgba(70, 42, 70, 0.5);
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(80px, 10vw, 145px);
+    font-style: italic;
+    line-height: 1;
+}
+
+.art-gallery__placeholder-text {
+    color: rgba(53, 35, 55, 0.75);
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+}
+
+.art-gallery__image-medium {
+    position: absolute;
+    left: 18px;
+    bottom: 18px;
+
+    padding: 8px 13px;
+
+    background: rgba(33, 19, 47, 0.88);
+    color: #f3e1c6;
+
+    font-size: 10px;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================
+   ARTWORK INFORMATION
+========================================= */
+
+.art-gallery__card-content {
+    padding: 25px 0 0;
+}
+
+.art-gallery__card-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.art-gallery__card-heading h2 {
+    margin: 0;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.art-gallery__card-heading > span {
+    color: #9b8a91;
+    font-size: 12px;
+}
+
+.art-gallery__description {
+    margin: 0 0 22px;
+    color: #746878;
+    font-size: 13px;
+    line-height: 1.85;
+}
+
+.art-gallery__details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    padding-top: 15px;
+    border-top: 1px solid #d9cbbc;
+
+    color: #756779;
+    font-size: 12px;
+}
+
+.art-gallery__status {
+    color: #89632e;
+    font-weight: 600;
+}
+
+/* =========================================
+   CONTACT SECTION
+========================================= */
+
+.art-gallery__contact {
+    padding: 100px 24px;
+    background: #21132f;
+    color: #f7ebdd;
+    text-align: center;
+}
+
+.art-gallery__contact-inner {
+    max-width: 740px;
+    margin: 0 auto;
+}
+
+.art-gallery__contact h2 {
+    margin: 0 0 22px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(48px, 6vw, 82px);
+    font-weight: 400;
+    line-height: 1.05;
+}
+
+.art-gallery__contact h2 em {
+    color: #e4bd76;
+    font-weight: 400;
+}
+
+.art-gallery__contact-inner > p:not(.art-gallery__eyebrow) {
+    max-width: 500px;
+    margin: 0 auto 35px;
+    color: #d6c7df;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.art-gallery__contact-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
+    min-height: 52px;
+    padding: 12px 28px;
+
+    border: 1px solid #e4bd76;
+    border-radius: 100px;
+
+    background: #e4bd76;
+    color: #21132f;
+
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition:
+        background-color 250ms ease,
+        transform 250ms ease;
+}
+
+.art-gallery__contact-link:hover {
+    background: #f3d6a0;
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes art-gallery-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1050px) {
+    .art-gallery__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .art-gallery__hero {
+        min-height: 420px;
+        padding: 125px 0 75px;
+    }
+
+    .art-gallery__hero-content,
+    .art-gallery__container {
+        width: calc(100% - 36px);
+    }
+
+    .art-gallery__hero h1 {
+        font-size: clamp(65px, 14vw, 90px);
+    }
+
+    .art-gallery__intro {
+        font-size: 14px;
+    }
+
+    .art-gallery__collection {
+        padding: 65px 0 85px;
+    }
+
+    .art-gallery__section-heading {
+        display: block;
+        margin-bottom: 35px;
+    }
+
+    .art-gallery__section-heading > p {
+        margin-top: 18px;
+    }
+
+    .art-gallery__grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .art-gallery__card-heading h2 {
+        font-size: 32px;
+    }
+
+    .art-gallery__contact {
+        padding: 75px 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .art-gallery__hero-content {
+        animation: none;
+    }
+
+    .art-gallery__image img,
+    .art-gallery__filter,
+    .art-gallery__contact-link {
+        transition: none;
+    }
+
+    .art-gallery__card:hover .art-gallery__image img,
+    .art-gallery__contact-link:hover {
+        transform: none;
+    }
+}
