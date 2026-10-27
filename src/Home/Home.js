@@ -89,7 +89,7 @@ class Home extends Component {
                 aria-labelledby="home-title"
             >
                 <SEO
-                    title="Jason Carcamo | React.js Developer, Fine artist & Founder of Carcamo Studios"
+                    title="Jason Carcamo | React.js Developer, Fine artist & Founder"
                     description="Jason Carcamo is a React.js full-stack developer, fine artist, and founder of Carcamo Studios LLC. Explore his web development projects and original artwork."
                     path="/"
                 />
